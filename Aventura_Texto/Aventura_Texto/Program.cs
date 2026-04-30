@@ -10,6 +10,8 @@ namespace Aventura_Texto
     {
         static void Main(string[] args)
         {
+            GameManager manager = new GameManager();
+            manager.StartGame();
         }
     }
 }

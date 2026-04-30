@@ -43,11 +43,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dangerous_Event.cs" />
+    <Compile Include="Encounter_Event.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="FirePotion.cs" />
+    <Compile Include="Fountain_Event.cs" />
+    <Compile Include="GameManager.cs" />
+    <Compile Include="Goblin.cs" />
+    <Compile Include="HealPotion.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Lucky_Event.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreePath_Event.cs" />
+    <Compile Include="Trap_Event.cs" />
+    <Compile Include="Troll.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="obj\Debug\Aventura_Texto.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

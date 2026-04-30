@@ -42,10 +42,12 @@ namespace Aventura_Texto
         {
             events = new List<Event>()
     {
-        new EncounterEvent(),
-        new DangerousEvent(),
-        new ThreePathEventcs(),
-        new LuckyEvent()
+        new Encounter_Event(),
+        new Dangerous_Event(),
+        new ThreePath_Event(),
+        new Lucky_Event(),
+        new Trap_Event(),
+        new Fountain_Event(),
     };
         }
 
@@ -146,12 +148,7 @@ namespace Aventura_Texto
 
                 Console.WriteLine($"{player.Name} atacó a {enemy.Name} por {player.Damage} de daño");
 
-                if (enemy.Health <= 0)
-                {
-                    Console.WriteLine($"{enemy.Name} murió");
-                    DropItem();
-                    enemies.RemoveAt(index);
-                }
+                CheckIfDead(enemy);
             }
             else if (option == "2")
             {
@@ -184,14 +181,22 @@ namespace Aventura_Texto
                 Entity target;
 
                 if (targetIndex == 0)
+                {
                     target = player;
+                }
                 else
+                {
                     target = enemies[targetIndex - 1];
+
+                }
 
                 selectedItem.Use(target);
 
+                CheckIfDead(target);
+
                 itemInventory.RemoveAt(itemIndex);
             }
+
 
         }
         
@@ -206,6 +211,20 @@ namespace Aventura_Texto
 
             Console.WriteLine($"{enemy.Name} te atacó por {enemy.Damage}");
         }
+        private void CheckIfDead(Entity target)
+        {
+            if (target.Health <= 0)
+            {
+                Console.WriteLine($"{target.Name} murió");
+
+                if (target != player)
+                {
+                    DropItem();
+                    enemies.Remove(target);
+                }
+            }
+        }
+
 
         public void DropItem()
         {

@@ -15,5 +15,9 @@ namespace Aventura_Texto
         public string Description => description;
 
         protected abstract void Fuction(Entity target);
+        public void Use(Entity target)
+        {
+            Fuction(target);
+        }
     }
 }

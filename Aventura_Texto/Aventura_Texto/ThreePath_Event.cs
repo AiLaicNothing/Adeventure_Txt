@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aventura_Texto
 {
-    internal class ThreePath_Event: Event
+    internal class ThreePath_Event : Event
     {
         public ThreePath_Event()
         {
@@ -56,4 +56,5 @@ namespace Aventura_Texto
 
             }
         }
+    }
 }
